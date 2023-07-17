@@ -28,6 +28,8 @@ public class BankAccount {
         this.dateOfBirth = dateOfBirth;
     }
 
+//    Getters and setters
+
     public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
@@ -47,4 +49,20 @@ public class BankAccount {
     public Double getBalance() {
         return balance;
     }
+
+//    Methods
+
+    public void deposit(double amount) {
+        this.balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        this.balance -= amount;
+    }
+
+    public void payInterest(double percentage) {
+        double interestToPay = this.balance * percentage;
+        this.balance += interestToPay;
+    }
+
 }
