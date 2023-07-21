@@ -1,21 +1,20 @@
-import org.junit.Before;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 
-class BankAccountTest {
+public class BankAccountTest {
 
     BankAccount bankAccount;
 
     @BeforeEach
     public void setUp() {
-        BankAccount bankAccount = new BankAccount("Naeto","Chinua", "15-04-1998", 123987, 100.00);
+        bankAccount = new BankAccount("Naeto","Chinua", "15-04-1998", 123987, 100.00);
     }
 
-//    Getters and setters
+//    Getters and setters tests
 
     @Test
     public void hasFirstName() {
@@ -25,10 +24,9 @@ class BankAccountTest {
     @Test
       public void canSetFirstName() {
           bankAccount.setFirstName("Naeto");
-          assertThat(bankAccount.getFirstName()).isEqualTo("Daniel");
+          assertThat(bankAccount.getFirstName()).isEqualTo("Naeto");
         }
 
-    }
 
     @Test
     public void hasLastName() {
@@ -38,15 +36,12 @@ class BankAccountTest {
     @Test
     public void canSetLastName() {
         bankAccount.setLastName("Chinua");
-        assertThat((bankAccount.getFirstName()).isEqualTo("Chinua");
+        assertThat(bankAccount.getLastName()).isEqualTo("Chinua");
     }
 
  @Test
     void hasDateOfBirth() {
       assertThat(bankAccount.getDateOfBirth()).isEqualTo("15-04-1998");
-
-
-
  }
 
  @Test
@@ -71,9 +66,9 @@ class BankAccountTest {
  }
 
  @Test
-    public void can SetBalance() {
-        bankAccount.setBalance(100);
-        assertThat(bankAccount.getBalance()).isEqualTo(100);
+    public void canSetBalance() {
+        bankAccount.setBalance(100.00);
+        assertThat(bankAccount.getBalance()).isEqualTo(100.00);
     }
 
 // Tests for BankAccount methods

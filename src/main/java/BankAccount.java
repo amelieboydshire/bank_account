@@ -4,9 +4,20 @@ public class BankAccount {
 
     private String firstName;
     private String lastName;
-    private LocalDate dateOfBirth;
-    private String accountNumber;
+    private String dateOfBirth;
+    private int accountNumber;
     private Double balance;
+
+    public BankAccount(String firstName, String lastName, String dateOfBirth, int accountNumber, double balance) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+
+//    Getters and setters
 
     public void setFirstName(String inputFirstName) {
         this.firstName = inputFirstName;
@@ -24,21 +35,19 @@ public class BankAccount {
         return lastName;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-//    Getters and setters
-
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
     }
 
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
@@ -46,7 +55,7 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public Double getBalance() {
+    public double getBalance() {
         return balance;
     }
 
